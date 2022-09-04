@@ -2,21 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
+    <link rel="stylesheet" href=".//style.css">
+    <title>Football Quiz</title>
 </head>
 
 <body>
         <header>
-            <h1> Coding Quiz Challenge</h1>
+            <div class="Large-font">Coding Quiz Challenge</div>
         </header>
         <nav>
-            <p>Try to answer the following Football related questions within the time limit.
+            <p class="text">Try to answer the following Football related questions within the time limit.
                 Keep in mind if you get a question wrong your timer will decrease by 10 second!
             </p>
-            <ul>Start Quiz</ul>
+            <ul>
+            <button class="Start Quiz">Start</button>
+            </ul>
         </nav>
-    
+
+    <main>
+        <section>
+           <div class="card results">
+            <div class="win-loss-container">
+            <div>
+                <h2><span class="win"></span> </h2>
+                <h2><span class="lose"></span> </h2>
+           </div>
+           
+            <div class="Card timer">
+                <div class="timer-text">
+                <div class="large-font timer-count">70</div>
+                <h3>seconds remaining</h3>
+            </div>
+            
+        </section>
+    </main>
+    <script src="./script.js"></script>
 </body>
 </html>
