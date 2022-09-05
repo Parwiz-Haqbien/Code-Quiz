@@ -1,47 +1,48 @@
-* {
+*{
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
+
 body {
-    background-color: aqua;
+    background-color: rgb(89, 131, 190);
 }
 
-header div{
+h1 {
+    font-size: 5.4rem;
+    color: #fff;
+    margin-bottom: 5rem;
+}
+
+h2 {
+    font-size: 5.2rem;
+    margin-bottom: 4rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 40px;
-    position: relative;
-    top: 15rem;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
- nav p{
+.flex-column {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+.flex-center {
     justify-content: center;
-    position: relative;
-    top: 17rem;
-
+    align-items: center;
 }
 
- button  {
-   position: relative ;
-   top: 18rem;
-   left: 42rem;
-   font-size: 30px;
-    color: brown;
+.justify-center {
+    justify-content: center;
 }
-
-.large-font {
-    font-size: 50px;
-    position: relative;
-    left: 2rem;
-    bottom: 4rem;
-}
-.Card h3 {
-    font-size: 40px;
-    position: relative;
-    left: 1rem;
-    bottom: 3.5rem;
+.text-center {
+    text-align: center;
 }
