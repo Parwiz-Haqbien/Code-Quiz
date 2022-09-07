@@ -5,11 +5,11 @@ const scoreText = document.querySelector('#Score');
 const ProgressBarFull = document.querySelector('#progressBarFull');
 
 
-let currentQuestion = {};
-let accesptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
+let currentQuestion = {}
+let acceptingAnswers = true
+let score = 0
+let questionCounter = 0
+let availableQuestions = []
 
 let questions = [
     {
@@ -51,7 +51,7 @@ const SCORE_POINTS = 100
 const MAX_QUESTIONS = 4
 
 // Telling the code to start the game with 0 question and the score should be 0 as well
-startGame = () =>{
+startGame = () => {
     questionCounter = 0
     score = 0
     availableQuestions = [...questions]
@@ -61,7 +61,7 @@ startGame = () =>{
 getNewQuestion = () => {
     if( availableQuestions.length ===0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
-        return window.location.assign('./end.html')
+        return window.location.assign('/end.html')
     }
 
 //this is essently saying question 1 of 4, 2 of 4 etc
@@ -78,42 +78,42 @@ getNewQuestion = () => {
 
     choices.forEach(choice => {
         //this will know what choice we are clicking on 
-        const number= choice.dataset ['number'];
-        choice.innerText = currentQuestion['choice' + number];
+        const number= choice.dataset ['number']
+        choice.innerText = currentQuestion['choice' + number]
     })
 
-    availableQuestions.splice (questionsIndex, 1);
+    availableQuestions.splice (questionsIndex, 1)
 
-    accesptingAnswers = true;
+    acceptingAnswers = true
 }
 
 choices.forEach( choice => {
 choice.addEventListener ('click', e => {
-        if (!accesptingAnswers) return;
+        if (!acceptingAnswers) return
         
-        accesptingAnswers = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice. dataset ['number'];
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset ['number']
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
         //This basicaly says if you get a question correct your score will increase by 100
         if (classToApply === 'correct') {
-            incrementScore(SCORE_POINTS);
+            incrementScore(SCORE_POINTS)
         }
         //we basicaly add the questions if we get it right
-        selectedChoice.parentElement.classList.add('classToApply');
+        selectedChoice.parentElement.classList.add(classToApply)
         //this basically says if we click on a question that will be right or worng we will be able to see if we got it right or wrong
         setTimeout( () => {
-        selectedChoice.parentElement.classList.remove(classToApply);
+        selectedChoice.parentElement.classList.remove(classToApply)
         //This will give us the next question 
-        getNewQuestion();
+        getNewQuestion()
 
         },1000)
 })
 })
 
 incrementScore = num => {
-    score +=num;
+    score +=num
     scoreText.innerText = score;
 }
 
