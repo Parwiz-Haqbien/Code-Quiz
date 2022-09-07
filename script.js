@@ -46,15 +46,15 @@ let questions = [
     }
 ]
 
+//This sets the points the game will have and the number of questions that will be displayed 
+const SCORE_POINTS = 100
+const MAX_QUESTIONS = 4
 
-const SCORE_POINTS = 100;
-const MAX_QUESTIONS = 4;
-
-
+// Telling the code to start the game with 0 question and the score should be 0 as well
 startGame = () =>{
-    questionCounter = 0;
-    score = 0;
-    availableQuestions = [...question];
+    questionCounter = 0
+    score = 0
+    availableQuestions = [...questions]
     getNewQuestion()
 }
 
@@ -64,17 +64,17 @@ getNewQuestion = () => {
         return window.location.assign('./end.html')
     }
 
-//this is essently saying question 1 of 4 2 of 4 etc
-    questionCounter++,
-    progressText.innerText = 'Questions ${questionCounter} of ${MAX_QESTIONS}';
-    //This bascialy calculate what question we on and corresspond that with the % we are currently at
-    ProgressBarFull.style.width = '${(questioncounter/MAX_QUESTIONS) * 100}%';
+//this is essently saying question 1 of 4, 2 of 4 etc
+    questionCounter++
+    progressText.innerText = 'Question ${questionCounter} of ${MAX_QESTIONS}'
+    //This bascialy calculate what question we on and corresspond that with the percentage we are currently at
+    ProgressBarFull.style.width = '${(questioncounter/MAX_QUESTIONS) * 100}%'
 //this is how we are going to calculate the value of the question
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     //this will keep track of what question we are on 
-    currentQuestion =availableQuestions[questionsIndex];
+    currentQuestion =availableQuestions[questionsIndex]
     //this will know what question will be asked
-    question.innerText = currentQuestion.question;
+    question.innerText = currentQuestion.question
 
     choices.forEach(choice => {
         //this will know what choice we are clicking on 
@@ -96,7 +96,25 @@ choice.addEventListener ('click', e => {
         const selectedAnswer = selectedChoice. dataset ['number'];
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-        
+        //This basicaly says if you get a question correct your score will increase by 100
+        if (classToApply === 'correct') {
+            incrementScore(SCORE_POINTS);
+        }
+        //we basicaly add the questions if we get it right
+        selectedChoice.parentElement.classList.add('classToApply');
+        //this basically says if we click on a question that will be right or worng we will be able to see if we got it right or wrong
+        setTimeout( () => {
+        selectedChoice.parentElement.classList.remove(classToApply);
+        //This will give us the next question 
+        getNewQuestion();
+
+        },1000)
 })
 })
 
+incrementScore = num => {
+    score +=num;
+    scoreText.innerText = score;
+}
+
+startGame()
