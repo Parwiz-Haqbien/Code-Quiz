@@ -1,2 +1,2 @@
 # Code-Quiz
-This is the week 4 homework for the Full Stack Bootcamp
+For the index.html which will be the cover of the page as user load the web. The user can click to start the game and if they get question right the score on  the right top side will go up and if they do not get a question right the score will remain as it is. when users finshes with the question then they will be preseted will two options. to write their name and go back to page to see their score or press play again and do the questions again. I made sure all my style.css or html and js is links to the right file so that my code can be exacuted.
