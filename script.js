@@ -1,7 +1,7 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
-const scoreText = document.querySelector('#Score');
+const scoreText = document.querySelector('#score');
 const ProgressBarFull = document.querySelector('#progressBarFull');
 
 
@@ -66,13 +66,14 @@ getNewQuestion = () => {
 
 //this is essently saying question 1 of 4, 2 of 4 etc
     questionCounter++
-    progressText.innerText = 'Question ${questionCounter} of ${MAX_QESTIONS}'
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     //This bascialy calculate what question we on and corresspond that with the percentage we are currently at
-    ProgressBarFull.style.width = '${(questioncounter/MAX_QUESTIONS) * 100}%'
+    ProgressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 //this is how we are going to calculate the value of the question
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     //this will keep track of what question we are on 
     currentQuestion =availableQuestions[questionsIndex]
+    console.log(currentQuestion)
     //this will know what question will be asked
     question.innerText = currentQuestion.question
 
@@ -102,6 +103,7 @@ choice.addEventListener ('click', e => {
         }
         //we basicaly add the questions if we get it right
         selectedChoice.parentElement.classList.add(classToApply)
+        console.log(selectedChoice)
         //this basically says if we click on a question that will be right or worng we will be able to see if we got it right or wrong
         setTimeout( () => {
         selectedChoice.parentElement.classList.remove(classToApply)
@@ -112,9 +114,10 @@ choice.addEventListener ('click', e => {
 })
 })
 
-incrementScore = num => {
+var incrementScore = num => {
     score +=num
     scoreText.innerText = score;
+    console.log(score)
 }
 
 startGame()
