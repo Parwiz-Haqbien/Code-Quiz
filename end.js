@@ -24,14 +24,14 @@ const highScore = JSON.parse(localStorage.getItem('highscores')) ||  []
         name: username.value
     }
 
-    highScores.push (score)
+    highScore.push (score)
 
-    highScores.sort ((a,b) =>  {
+    highScore.sort ((a,b) =>  {
         return b.score - a.score
     })
 
-    highScores.splice (5)
+    highScore.splice (5)
 
-    localStorage.setItem('highScores' , JSON.stringify (highScores))
+    localStorage.setItem('highScores' , JSON.stringify (highScore))
     window.location.assign('/')
  }
