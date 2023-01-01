@@ -11,7 +11,7 @@ main {
   flex-wrap: wrap;
   margin-top: 2%;
 }
-#viewHighScores{
+#viewScores{
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: bold;
@@ -29,7 +29,7 @@ main {
   -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
 }
-#viewHighScores:hover, #viewHighScores:focus #viewHighScores:active{
+#viewScores:hover, #viewScores:focus #viewScores:active{
   box-shadow: 0 0 20px rgba(0, 0 ,0 , 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
@@ -75,7 +75,7 @@ main {
   flex: 1 1 0;
   justify-content: center;
 }
-.startQuiz {
+.startButton {
   position: fixed;
   left: 45%;
   font-family: "Roboto", sans-serif;
@@ -95,7 +95,7 @@ main {
   -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
 }
-.startQuiz:hover {
+.startButton:hover {
   box-shadow: 0 0 20px rgba(0, 0 ,0 , 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
@@ -112,7 +112,7 @@ main {
   font-size: 12px;
   font-weight: bold;
   background: #1E90FF;
-  width: 9rem;
+  width: 30rem;
   height: 40px;
   text-decoration: none;
   text-transform: uppercase;
@@ -135,29 +135,29 @@ main {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-#qintroPart {
+#p0 {
   display: block;
 }
-#questionOne {
+#p1 {
   display: none;
 }
-#questionTwo {
+#p2 {
   display: none;
 }
-#questionThree {
+#p3 {
   display: none;
 }
-#questionFour {
+#p4 {
   display: none;
 }
-#qendPart {
+#p5 {
   display: none;
   text-align-last: center;
 }
-#qendPart h1{
+#p6 h1{
   font-size: 200%;
 }
-#qendPart h3{
+#p6 h3{
   font-size: 150%;
 }
 #submitButton{
@@ -172,14 +172,14 @@ main {
   cursor: pointer;
 }
 
-#leaderboard{
+#p6{
   display: none;
   text-align-last: center;
 }
-#leaderboard h1{
+#p6 h1{
   font-size: 300%;
 }
-#leaderboard .btn-group{
+#p6 .btn-group{
   display: inline-flex;
 }
 #submit{

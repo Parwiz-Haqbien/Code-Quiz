@@ -7,8 +7,8 @@ const timeCountDown = document.querySelector(".timer");
 const content = document.querySelector(".container");
 const questionStart = document.querySelector(".question");
 const answersEl = document.querySelector(".info");
-const startPage = document.getElementById("qintroPart");
-const endPart = document.getElementById("qendPart");
+const startPage = document.getElementById("p0");
+const endPart = document.getElementById("p5");
 const score = document.getElementById("score");
 var result = document.querySelector(".result");
 var playerName = document.getElementById("initials");
@@ -24,7 +24,7 @@ clearButton.addEventListener("click", clearScore);
 const backButton = document.getElementById("goBack");
 backButton.addEventListener("click", goBack);
 
-const viewScores = document.getElementById("viewHighScores");
+const viewScores = document.getElementById("viewScores");
 viewScores.addEventListener("click", displayHighScores);
 
 var rightAnswer = document.querySelectorAll(".right");
@@ -37,7 +37,7 @@ for (const button of notRightAnswer) {
   button.addEventListener("click", wrongAnswer);
 }
 
-const start = document.querySelector(".startQuiz");
+const start = document.querySelector(".startButton");
 start.addEventListener("click", startQuiz);
 
 function startQuiz() {
@@ -60,7 +60,7 @@ function startQuiz() {
 
   function startTest() {
     startPage.style.display = "none";
-    document.getElementById("q" + questNumber).style.display = "block";
+    document.getElementById("p" + questNumber).style.display = "block";
     nextPage();
   }
 
@@ -78,9 +78,76 @@ function startQuiz() {
     result.style.display = "block";
     nextPage();
   }
+function wrongAnswer() {
+  result.textContent = "Wrong!!";
+  result.style.display = "block";
+  timeLeft -= 10;
+  nextPage();
+}
 
   function goBack() {
     resetTest();
-    document.getElementById("leaderboard").style.display = "none";
-    document.getElementById("qendPart").style.display = "block";
+    document.getElementById("p6").style.display = "none";
+    document.getElementById("p0").style.display = "block";
   }
+
+function nextPage() {
+  if (questNumber > 3) {
+    names = document.getElementById("names");
+    result.style.display = "none";
+  }
+
+  if (questNumber == 5) {
+    sortingHighScores(countDown);
+  }
+
+  document.getElementById("p" + questNumber).style.display = "none";
+  questNumber++;
+  questNumber = questNumber % 7;
+  document.getElementById("p" + questNumber).style.display = "block";
+}
+
+function displayHighScores() {
+  timeLeft = 75;
+  timeCountDown.textContent = "Time: " + timeLeft;
+  clearInterval(countDown);
+  document.getElementById("p" + questNumber).style.display = "none";
+  document.getElementById("p6").style.display = "block";
+  result.style.display = "none";
+}
+
+function setHighScores(highScores) {
+  names.innerHTML = "";
+  index = 1;
+  highScores.forEach((score) => {
+    ol = document.createElement("ol");
+    ol.innerHTML = index + ". " + score.playerInitials + " : " + score.timeLeft;
+    console.log(index);
+    nameList.appendChild(ol);
+    index++;
+  });
+}
+
+function sortingHighScores(countDown) {
+  clearInterval(countDown);
+  const highScores = localStorage.highScores
+    ? JSON.parse(localStorage.highScores)
+    : [];
+
+  highScores.push({
+    timeLeft: timeLeft,
+    playerInitials: playerName.value,
+  });
+  highScores.sort((a, b) => b.timeLeft - a.timeLeft);
+  highScores.splice(5);
+
+  localStorage.removeItem("highScores");
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+  setHighScores(highScores);
+}
+
+function clearScore() {
+  names.innerHTML = "";
+  localStorage.removeItem("highScores");
+}

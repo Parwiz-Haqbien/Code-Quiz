@@ -10,22 +10,22 @@
 
 <body>
     <header class="highScores">
-        <button id="viewHighScores">View highScores</button>
+        <button id="viewScores">View highScores</button>
         <h2 class="timer"> Time: 75</h2>
     </header>
 
   <main>
     <section class="container">
-        <section id="qintroPart" class="container">
+        <section id="p0" class="container">
             <h1 class="question">Coding Quiz Challenge</h1>
             <h2 class="info">
                 Attempt to answer the following code-related questions within the time limit. 
                 Keep in mind that incorrect answers will result in a 10 second penalty to your score/time.
             </h2>
-            <button class="startQuiz">Start Quiz</button>
+            <button class="startButton">Start Quiz</button>   
         </section>
         
-        <section id="questionOne" class="container">
+        <section id="p1" class="container">
             <h1 class="question">
                 What is the correct way to write a JavaScript array?
             </h1>
@@ -37,7 +37,7 @@
             </div>
         </section>
 
-        <section id="questionTwo" class="container">
+        <section id="p2" class="container">
             <h1 class="question">
                 How do you create a function in JavaScript?
             </h1>
@@ -49,7 +49,7 @@
             </div>
         </section>
 
-        <section id="questionThree" class="container">
+        <section id="p3" class="container">
             <h1 class="question">
                 What is the correct way to write a JavaScript loop?
             </h1>
@@ -61,7 +61,7 @@
             </div>
         </section>
 
-        <section id="questionFour" class="container">
+        <section id="p4" class="container">
             <h1 class="question">
                 How does a switch statement work in JavaScript?
             </h1>
@@ -76,7 +76,7 @@
         <section>
             <h2 class="result"></h2>
         </section>
-        <section id="qendPart" class="container">
+        <section id="p5" class="container">
             <h1>You're Done!</h1>
             <h3 id="score"></h3>
 
@@ -91,8 +91,7 @@
                 <input type="submit" id="submitButton" value="Submit" />
               </div>
         </section>
-
-        <section id="leaderboard" class="container">
+        <section id="p6" class="container">
             <h1>Top 5 candidates</h1>
             <div id="highScores">
               <ol id="names"></ol>
