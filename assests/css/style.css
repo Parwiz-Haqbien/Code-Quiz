@@ -40,3 +40,28 @@ main {
   padding: 20px;
   color: black;
 }
+
+.container {
+  display: block;
+  flex: 1 1 0;
+  justify-content: center;
+}
+.result {  
+  display: block;
+  margin: 10px;
+  font-size: 300%;
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  margin-top: 250px;
+  color: red;
+  text-align: center;
+}
+.question {
+  display: block;
+  margin: 10px;
+  font-size: 300%;
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+}
