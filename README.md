@@ -17,3 +17,4 @@ Click 'Start' to begin the quiz. Correct answers add time, incorrect answers sub
 ## Contribution
 Made by Parwiz Haqbien
 
+page url: (https://parwiz-haqbien.github.io/Code-Quiz/)
