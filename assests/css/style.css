@@ -135,7 +135,7 @@ main {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-#introPart {
+#qintroPart {
   display: block;
 }
 #questionOne {
@@ -150,14 +150,14 @@ main {
 #questionFour {
   display: none;
 }
-#endPart {
+#qendPart {
   display: none;
   text-align-last: center;
 }
-#endPart h1{
+#qendPart h1{
   font-size: 200%;
 }
-#endPart h3{
+#qendPart h3{
   font-size: 150%;
 }
 #submitButton{

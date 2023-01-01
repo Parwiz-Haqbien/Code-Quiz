@@ -7,8 +7,8 @@ const timeCountDown = document.querySelector(".timer");
 const content = document.querySelector(".container");
 const questionStart = document.querySelector(".question");
 const answersEl = document.querySelector(".info");
-const startPage = document.getElementById("introPart");
-const endPart = document.getElementById("endPart");
+const startPage = document.getElementById("qintroPart");
+const endPart = document.getElementById("qendPart");
 const score = document.getElementById("score");
 var result = document.querySelector(".result");
 var playerName = document.getElementById("initials");
@@ -56,4 +56,10 @@ function startQuiz() {
         score.textContent = "Your final score is " + timeLeft;
       }
     }, 1000);
+  }
+
+  function startTest() {
+    startPage.style.display = "none";
+    document.getElementById("q" + questNumber).style.display = "block";
+    nextPage();
   }
