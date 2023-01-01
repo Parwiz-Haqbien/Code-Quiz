@@ -1,6 +1,6 @@
 var questNumber = 0;
 var finalScore = 0;
-var timeLeft = 75;
+var timeLeft = 50;
 var countDown;
 
 const timeCountDown = document.querySelector(".timer");
@@ -68,7 +68,7 @@ function startQuiz() {
     clearInterval(countDown);
     questNumber = 0;
     finalScore = 0;
-    timeLeft = 75;
+    timeLeft = 50;
     timeCountDown.textContent = "Time: " + timeLeft;
     playerName.value = "";
   }
@@ -108,7 +108,7 @@ function nextPage() {
 }
 
 function displayHighScores() {
-  timeLeft = 75;
+  timeLeft = 50;
   timeCountDown.textContent = "Time: " + timeLeft;
   clearInterval(countDown);
   document.getElementById("p" + questNumber).style.display = "none";

@@ -1,2 +1,19 @@
 # Code-Quiz
-For the index.html which will be the cover of the page as user load the web. The user can click to start the game and if they get question right the score on  the right top side will go up and if they do not get a question right the score will remain as it is. when users finshes with the question then they will be preseted will two options. to write their name and go back to page to see their score or press play again and do the questions again. I made sure all my style.css or html and js is links to the right file so that my code can be exacuted.
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+
+## Description
+In this repository, I develop a timed quiz on JavaScript principles that features a high scores leaderboard.
+
+## Installation
+N/A
+
+## Usage
+Click 'Start' to begin the quiz. Correct answers add time, incorrect answers subtract time. The quiz ends when all questions are answered or the timer reaches zero. Save your score with your initials. View saved scores on the leaderboard with 'View Highscores'.
+
+## Contribution
+Made by Parwiz Haqbien
+
