@@ -26,3 +26,16 @@ backButton.addEventListener("click", goBack);
 
 const viewScores = document.getElementById("viewHighScores");
 viewScores.addEventListener("click", displayHighScores);
+
+var rightAnswer = document.querySelectorAll(".right");
+for (const button of rightAnswer) {
+  button.addEventListener("click", correctAnswer);
+}
+
+var notRightAnswer = document.querySelectorAll(".wrong");
+for (const button of notRightAnswer) {
+  button.addEventListener("click", wrongAnswer);
+}
+
+const start = document.querySelector(".startQuiz");
+start.addEventListener("click", start);
