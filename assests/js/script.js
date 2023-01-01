@@ -64,10 +64,10 @@ getNewQuestion = () => {
         return window.location.assign('/end.html')
     }
 
-//this is essently saying question 1 of 4, 2 of 4 etc
+//Question 1 of 4, 2 of 4 etc
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    //This bascialy calculate what question we on and corresspond that with the percentage we are currently at
+    // Calculate what question we on and correspond that with the percentage we are currently at
     ProgressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 //this is how we are going to calculate the value of the question
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
