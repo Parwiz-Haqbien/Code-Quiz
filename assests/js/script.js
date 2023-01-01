@@ -3,12 +3,12 @@ var finalScore = 0;
 var timeLeft = 75;
 var countDown;
 
-const timeEl = document.querySelector(".timer");
+const timeCountDown = document.querySelector(".timer");
 const content = document.querySelector(".container");
-const questionEl = document.querySelector(".question");
+const questionStart = document.querySelector(".question");
 const answersEl = document.querySelector(".info");
 const startPage = document.getElementById("introPart");
-const p5 = document.getElementById("endPart");
+const endPart = document.getElementById("endPart");
 const score = document.getElementById("score");
 var result = document.querySelector(".result");
 var playerName = document.getElementById("initials");
@@ -38,4 +38,22 @@ for (const button of notRightAnswer) {
 }
 
 const start = document.querySelector(".startQuiz");
-start.addEventListener("click", start);
+start.addEventListener("click", startQuiz);
+
+function startQuiz() {
+    resetTest();
+    countDown = startCountdown();
+    startTest();
+  }
+
+  function startCountdown() {
+    return setInterval(function () {
+      timeLeft--;
+      timeCountDown.textContent = "Time: " + timeLeft;
+  
+      if (timeLeft < 0 || questNumber == 5) {
+        clearInterval(countDown);
+        score.textContent = "Your final score is " + timeLeft;
+      }
+    }, 1000);
+  }
