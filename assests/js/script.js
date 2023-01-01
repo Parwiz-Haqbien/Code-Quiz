@@ -63,3 +63,24 @@ function startQuiz() {
     document.getElementById("q" + questNumber).style.display = "block";
     nextPage();
   }
+
+  function resetTest() {
+    clearInterval(countDown);
+    questNumber = 0;
+    finalScore = 0;
+    timeLeft = 75;
+    timeCountDown.textContent = "Time: " + timeLeft;
+    playerName.value = "";
+  }
+
+  function correctAnswer() {
+    result.textContent = "Correct!!";
+    result.style.display = "block";
+    nextPage();
+  }
+
+  function goBack() {
+    resetTest();
+    document.getElementById("leaderboard").style.display = "none";
+    document.getElementById("qendPart").style.display = "block";
+  }
