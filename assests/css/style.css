@@ -129,3 +129,45 @@ main {
 .btn-group button:not(:last-child) {
   border-bottom: none;
 }
+
+.btn-group button:hover, .btn:focus .btn:active {
+  box-shadow: 0 0 20px rgba(0, 0 ,0 , 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+#introPart {
+  display: block;
+}
+#questionOne {
+  display: none;
+}
+#questionTwo {
+  display: none;
+}
+#questionThree {
+  display: none;
+}
+#questionFour {
+  display: none;
+}
+#endPart {
+  display: none;
+  text-align-last: center;
+}
+#endPart h1{
+  font-size: 200%;
+}
+#endPart h3{
+  font-size: 150%;
+}
+#submitButton{
+  font-size: 12px;
+  background: #1E90FF;
+  height: 30px;
+  width: 75px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
