@@ -171,3 +171,22 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
+
+#leaderboard{
+  display: none;
+  text-align-last: center;
+}
+#leaderboard h1{
+  font-size: 300%;
+}
+#leaderboard .btn-group{
+  display: inline-flex;
+}
+#submit{
+  display: inline-flex;
+}
+#names ol{
+  color: black;
+  font-size: 150%;
+  margin: 5px;
+}
