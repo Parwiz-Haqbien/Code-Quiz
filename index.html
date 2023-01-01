@@ -73,9 +73,40 @@
                 <button class="wrong">D. It executes a block of code depending on the case value.</button>
             </div>
         </section>
+
+        <section>
+            <h2 class="result"></h2>
+        </section>
+        <section id="endPart" class="container">
+            <h1>You're Done!</h1>
+            <h3 id="score"></h3>
+
+            <div id="submit">
+                <h3>Enter your initials:</h3>
+                <input
+                  type="text"
+                  id="initials"
+                  name="initials"
+                  autocomplete="on"
+                />
+                <input type="submit" id="submitButton" value="Submit" />
+              </div>
+        </section>
+
+        <section id="leaderboard" class="container">
+            <h1>Top 5 candidates</h1>
+            <div id="highScores">
+              <ol id="names"></ol>
+            </div>
+            <div class="btn-group">
+              <button id="goBack">Go back</button>
+              <button id="clearScore">Clear high scores</button>
+            </div>
+        </section>
     </section>
   </main>
 
+  <script src="./assests/js/script.js"></script>
     
 </body> 
 </html>
